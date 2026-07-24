@@ -1,0 +1,111 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            background:#f4f7fa;
+            font-family:Arial, sans-serif;
+        }
+
+        .container{
+            margin-top:80px;
+            max-width:700px;
+        }
+
+        .card{
+            border-radius:20px;
+            box-shadow:0 10px 20px rgba(0,0,0,.15);
+        }
+
+        .price{
+            font-size:42px;
+            color:green;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card p-5 text-center">
+
+<h1>🏠 Prediction Result</h1>
+
+<hr>
+
+<h2>Predicted House Price</h2>
+
+<div class="price">
+    ${{ "{:,.2f}".format(prediction) }}
+</div>
+
+<br>
+
+<h5>Location</h5>
+
+<p>
+Latitude : {{ latitude }}
+<br>
+Longitude : {{ longitude }}
+</p>
+
+<hr>
+
+<h4>Property Statistics</h4>
+
+<table class="table table-bordered">
+
+<tr>
+    <th>Feature</th>
+    <th>Value</th>
+</tr>
+
+<tr>
+    <td>{{ chart_data["labels"][0] }}</td>
+    <td>{{ chart_data["values"][0] }}</td>
+</tr>
+
+<tr>
+    <td>{{ chart_data["labels"][1] }}</td>
+    <td>{{ chart_data["values"][1] }}</td>
+</tr>
+
+<tr>
+    <td>{{ chart_data["labels"][2] }}</td>
+    <td>{{ chart_data["values"][2] }}</td>
+</tr>
+
+<tr>
+    <td>{{ chart_data["labels"][3] }}</td>
+    <td>{{ chart_data["values"][3] }}</td>
+</tr>
+
+</table>
+
+<a href="/" class="btn btn-primary">
+
+Predict Another House
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
+```
